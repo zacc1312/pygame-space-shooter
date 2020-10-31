@@ -7,8 +7,16 @@ This was made using pygame 2.0.0
 
 
 
+Controls:
+
+A and D to move the spaceship side to side
+
+Space to fire the laser
 
 
+
+
+Notes:
 
 To run the program (at least for me i had to do this), go to the top of the screen where it says 
 
