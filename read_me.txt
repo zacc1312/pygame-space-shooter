@@ -1,3 +1,15 @@
+You're gonna need python installed to run this program, there are no libraries you need to download though, except, of course pygame if you don't have it.
+
+
+
+This was made using pygame 2.0.0
+
+
+
+
+
+
+
 To run the program (at least for me i had to do this), go to the top of the screen where it says 
 
 This PC > Desktop > Space Shooter
