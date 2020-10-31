@@ -7,8 +7,8 @@ import pickle
 import os.path
 pygame.font.init()
 
-if os.path.isfile("/save.dat"):
-	highscore = pickle.load(open("/save.dat", "rb"))
+if os.path.isfile("save.dat"):
+	highscore = pickle.load(open("save.dat", "rb"))
 else:
 	highscore=0
 
@@ -188,7 +188,7 @@ def main():
 
 		if lost:
 			if level > highscore:
-				pickle.dump(level, open("/save.dat", "wb"))
+				pickle.dump(level, open("save.dat", "wb"))
 
 		pygame.display.update() # updates the changes to this display
 
@@ -228,6 +228,8 @@ def main():
 		# shuts down the program if the window is closed
 		for event in pygame.event.get():
 			if event.type==pygame.QUIT:
+				if level > highscore:
+					pickle.dump(level, open("save.dat", "wb"))
 				run=False
 
 			keys = pygame.key.get_pressed()
