@@ -7,8 +7,8 @@ import pickle
 import os.path
 pygame.font.init()
 
-if os.path.isfile("assets/save.dat"):
-	highscore = pickle.load(open("assets/save.dat", "rb"))
+if os.path.isfile("/save.dat"):
+	highscore = pickle.load(open("/save.dat", "rb"))
 else:
 	highscore=0
 
@@ -19,21 +19,21 @@ WIN = pygame.display.set_mode((WIDTH,HEIGHT)) # creates the new window
 pygame.display.set_caption("Space Shooter") # sets the space shooter caption for the window
 
 # Load images
-RED_SPACE_SHIP = pygame.image.load(os.path.join("assets","pixel_ship_red_small.png"))
-GREEN_SPACE_SHIP = pygame.image.load(os.path.join("assets","pixel_ship_green_small.png"))
-BLUE_SPACE_SHIP = pygame.image.load(os.path.join("assets","pixel_ship_blue_small.png"))
+RED_SPACE_SHIP = pygame.image.load(os.path.join("","pixel_ship_red_small.png"))
+GREEN_SPACE_SHIP = pygame.image.load(os.path.join("","pixel_ship_green_small.png"))
+BLUE_SPACE_SHIP = pygame.image.load(os.path.join("","pixel_ship_blue_small.png"))
 
 # player player
-YELLOW_SPACE_SHIP = pygame.image.load(os.path.join("assets","pixel_ship_yellow.png"))
+YELLOW_SPACE_SHIP = pygame.image.load(os.path.join("","pixel_ship_yellow.png"))
 
 # Lasers
-RED_LASER = pygame.image.load(os.path.join("assets","pixel_laser_red.png"))
-GREEN_LASER = pygame.image.load(os.path.join("assets","pixel_laser_green.png"))
-BLUE_LASER = pygame.image.load(os.path.join("assets","pixel_laser_blue.png"))
-YELLOW_LASER = pygame.image.load(os.path.join("assets","pixel_laser_yellow.png"))
+RED_LASER = pygame.image.load(os.path.join("","pixel_laser_red.png"))
+GREEN_LASER = pygame.image.load(os.path.join("","pixel_laser_green.png"))
+BLUE_LASER = pygame.image.load(os.path.join("","pixel_laser_blue.png"))
+YELLOW_LASER = pygame.image.load(os.path.join("","pixel_laser_yellow.png"))
 
-# background image for the game
-BG=pygame.transform.scale(pygame.image.load(os.path.join("assets","background-black.png")),(WIDTH, HEIGHT))
+# background image for the gamea
+BG=pygame.transform.scale(pygame.image.load(os.path.join("","background-black.png")),(WIDTH, HEIGHT))
 
 
 class Laser:
@@ -151,8 +151,8 @@ def main():
 	clock = pygame.time.Clock() # the clock to keep the game running
 	lost=False
 	lost_count=0
-	main_font = pygame.font.Font(os.path.join("assets","Pixellari.ttf"),30) # sets a font to put on the screens
-	lost_font = pygame.font.Font(os.path.join("assets","Pixellari.ttf"),50) # sets a font to put on the screens
+	main_font = pygame.font.Font(os.path.join("","Pixellari.ttf"),30) # sets a font to put on the screens
+	lost_font = pygame.font.Font(os.path.join("","Pixellari.ttf"),50) # sets a font to put on the screens
 
 	enemies = []
 	wave_length = 5
@@ -188,7 +188,7 @@ def main():
 
 		if lost:
 			if level > highscore:
-				pickle.dump(level, open("assets/save.dat", "wb"))
+				pickle.dump(level, open("/save.dat", "wb"))
 
 		pygame.display.update() # updates the changes to this display
 
